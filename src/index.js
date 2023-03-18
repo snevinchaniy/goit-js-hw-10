@@ -42,7 +42,7 @@ function renderCountryList(countries) {
     .map(
       ({ name, flags }) =>
         `<li class = "item"><img src="${flags.svg}"
-        alt"${name.official}" width="40" height="25" clall = item-img>${name.official}</li>`
+        alt"${name.official}" width="40" height="25">${name.official}</li>`
     )
     .join('');
 }
@@ -56,9 +56,9 @@ function renderCountryOne(countries) {
           name.official
         }" width="40" height="25">
         ${name.official}</h1>
-      <p>Capital: ${capital}</p>
-      <p>Population: ${population}</p>
-      <p>Languages: ${Object.values(languages)}</p>`
+      <p><span>Capital:</span> ${capital}</p>
+      <p><span>Population:</span> ${population}</p>
+      <p><span>Languages:</span> ${Object.values(languages)}</p>`
     )
     .join('');
 }
@@ -81,3 +81,7 @@ function clearMarkup() {
   countryList.innerHTML = '';
   countryInfo.innerHTML = '';
 }
+
+Notiflix.Notify.init({
+  distance: '100px',
+});
